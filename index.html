@@ -32,16 +32,22 @@
         </div>
         <button id="create-slider" class="btn btn-primary px-5">Create slider</button>
       </div>
+      <!-- Show Search Result Start -->
+      <div id="search__container" class="bg-light rounded shadow mt-3 d-none"
+        style="font-size:2rem; line-height: 2rem; font-weight: bold;">
+        <p class="p-4">Total image : <span id="search__result"></span> </p>
+      </div>
+      <!-- Show Search Result End -->
       <!-- Loader Start -->
       <div class="d-flex justify-content-center mt-5">
         <div id="spinner" class="spinner-border text-info d-none" role="status">
-        
+
         </div>
       </div>
       <!-- Loader End -->
       <!-- Empty Error Start -->
       <div class="d-flex justify-content-center">
-        <h3 id="empty__error" class="d-none">Nothing Found! Please Try again.</h3>
+        <h3 id="empty__error" class="d-none">Nothing found! Please try again later.</h3>
       </div>
       <!-- Empty Error End -->
       <div class="row gallery" id="gallery__row">

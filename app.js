@@ -6,6 +6,8 @@ const sliderBtn = document.getElementById('create-slider');
 const sliderContainer = document.getElementById('sliders');
 const spinner = document.getElementById("spinner");
 const gallery__row = document.getElementById("gallery__row");
+const search__container = document.getElementById("search__container");
+const search__result = document.getElementById("search__result");
 
 // selected image 
 let sliders = [];
@@ -28,8 +30,9 @@ const showImages = (images) => {
     gallery.appendChild(div)
   })
 
-  loadSpinner()
-
+  loadSpinner();
+  notFound();
+  searchResult(images);
 
 }
 
@@ -148,6 +151,7 @@ searchBtn.addEventListener('click', function () {
   const search = document.getElementById('search');
   getImages(search.value)
   sliders.length = 0;
+
 })
 
 sliderBtn.addEventListener('click', function () {
@@ -161,11 +165,22 @@ const loadSpinner = () => {
   spinner.classList.toggle('d-none')
   gallery__row.classList.toggle('d-none')
 
-  // for nothing found
+
+
+}
+
+// for nothing found
+const notFound = () => {
   if (gallery__row.innerHTML == "") {
     document.getElementById("empty__error").classList.remove("d-none");
 
   } else {
     document.getElementById("empty__error").classList.add("d-none");
   }
+}
+
+// Search Result
+const searchResult = (result) => {
+  search__result.innerText = result.length;
+  search__container.classList.remove("d-none");
 }
